@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:tsr_maquette/screen/campagne.dart';
 import 'package:tsr_maquette/widget/detail_card.dart';
 
 class Home extends StatelessWidget {
@@ -6,6 +9,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(
@@ -23,20 +28,45 @@ class Home extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Flex(
-          direction: Axis.vertical,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const DetailCard(),
-            TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: Colors.white,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: Column(
+            // direction: Axis.vertical,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              const DetailCard(),
+              SizedBox(
+                height: screenSize.height / 5,
               ),
-              label: const Text(""),
-            ),
-          ],
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+                decoration: const BoxDecoration(
+                  color: Colors.white12,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30.0),
+                  ),
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Campagne()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0.0,
+                    primary: Colors.transparent,
+                  ),
+                  child: const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

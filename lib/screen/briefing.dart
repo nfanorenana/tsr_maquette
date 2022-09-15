@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsr_maquette/widget/campagne_footer.dart';
 import 'package:tsr_maquette/widget/remuneration_card.dart';
 import 'package:tsr_maquette/widget/sn_logo.dart';
 import 'package:tsr_maquette/widget/text_card.dart';
@@ -30,40 +31,54 @@ Ex: Abonnement à Barbie Jeux (https://www.megastar.fr/produits/abonnements/jeux
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextCard(
-            title: 'Description',
-            content: briefingContent,
+    final screenSize = MediaQuery.of(context).size;
+
+    return Stack(
+      children: [
+        Container(
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+          constraints: BoxConstraints(
+            minHeight: screenSize.height,
           ),
-          const SizedBox(
-            height: 20.0,
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextCard(
+                title: 'Description',
+                content: briefingContent,
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              TextCard(
+                title: 'Contenu des posts',
+                content: contenuPostContent,
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const SnLogo(color: Colors.black),
+              const SizedBox(
+                height: 20.0,
+              ),
+              TextCard(
+                title: 'Tags et comptes à identifier',
+                tag: tag,
+                content: tagParagraph,
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              RemunerationCard()
+            ],
           ),
-          TextCard(
-            title: 'Contenu des posts',
-            content: contenuPostContent,
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          const SnLogo(color: Colors.black),
-          const SizedBox(
-            height: 20.0,
-          ),
-          TextCard(
-            title: 'Tags et comptes à identifier',
-            tag: tag,
-            content: tagParagraph,
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          // RemunerationCard()
-        ],
-      ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: CampagneFooter(),
+        )
+      ],
     );
   }
 }

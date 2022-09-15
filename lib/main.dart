@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tsr_maquette/screen/briefing.dart';
 import 'package:tsr_maquette/screen/campagne.dart';
 import 'package:tsr_maquette/screen/home.dart';
 
@@ -17,8 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
       ),
-      home: const Campagne(),
+      home: const Home(),
     );
   }
 }
