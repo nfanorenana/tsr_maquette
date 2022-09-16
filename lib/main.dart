@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tsr_maquette/screen/campagne.dart';
 import 'package:tsr_maquette/screen/home.dart';
 
 void main() {

@@ -9,33 +9,35 @@ class DetailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Price(price: '23 000'),
-          const SizedBox(
-            height: 20.0,
+          SizedBox(
+            height: screenSize.height / 30,
           ),
           Text(
             "19 342€ restant",
             style: AppTheme.defaultTextStyle,
           ),
-          const SizedBox(
-            height: 20.0,
+          SizedBox(
+            height: screenSize.height / 30,
           ),
           const SnLogo(
             color: Colors.white,
           ),
-          const SizedBox(
-            height: 20.0,
+          SizedBox(
+            height: screenSize.height / 30,
           ),
           const TitleCard(
             title: 'knorr',
             subtitle: 'bouillon cube halal',
           ),
-          const SizedBox(
-            height: 20.0,
+          SizedBox(
+            height: screenSize.height / 30,
           ),
           const Text(
             'objectif de la campagne en quelques mots',

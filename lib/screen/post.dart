@@ -16,7 +16,7 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
       constraints: BoxConstraints(
-        minHeight: screenSize.height,
+        minHeight: screenSize.height / 1.2,
       ),
       color: Colors.white,
       child: Column(
@@ -26,8 +26,8 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
             postExample,
             style: const TextStyle(color: Colors.black, fontSize: 18.0),
           ),
-          const SizedBox(
-            height: 30.00,
+          SizedBox(
+            height: screenSize.height / 50,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -43,8 +43,8 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Copier le texte',
                       style: TextStyle(
                         color: Color.fromRGBO(146, 150, 227, 1),
@@ -52,9 +52,9 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
                       ),
                     ),
                     SizedBox(
-                      width: 10.0,
+                      width: screenSize.width / 50,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.copy,
                       color: Color.fromRGBO(146, 150, 227, 1),
                       size: 24,
@@ -64,13 +64,13 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
               ),
             ],
           ),
-          const SizedBox(
-            height: 30.0,
+          SizedBox(
+            height: screenSize.height / 50,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
+            children: [
+              const Text(
                 'Télécharger les visuels',
                 style: TextStyle(
                   color: Color.fromRGBO(146, 150, 227, 1),
@@ -78,9 +78,9 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
                 ),
               ),
               SizedBox(
-                width: 10.0,
+                width: screenSize.width / 50,
               ),
-              Icon(
+              const Icon(
                 Icons.file_download_outlined,
                 color: Color.fromRGBO(146, 150, 227, 1),
                 size: 26,

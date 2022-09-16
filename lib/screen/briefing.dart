@@ -38,7 +38,7 @@ Ex: Abonnement à Barbie Jeux (https://www.megastar.fr/produits/abonnements/jeux
         Container(
           padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
           constraints: BoxConstraints(
-            minHeight: screenSize.height,
+            minHeight: screenSize.height * 1.88,
           ),
           color: Colors.white,
           child: Column(
@@ -48,36 +48,32 @@ Ex: Abonnement à Barbie Jeux (https://www.megastar.fr/produits/abonnements/jeux
                 title: 'Description',
                 content: briefingContent,
               ),
-              const SizedBox(
-                height: 20.0,
+              SizedBox(
+                height: screenSize.height / 30,
               ),
               TextCard(
                 title: 'Contenu des posts',
                 content: contenuPostContent,
               ),
-              const SizedBox(
-                height: 20.0,
+              SizedBox(
+                height: screenSize.height / 30,
               ),
               const SnLogo(color: Colors.black),
-              const SizedBox(
-                height: 20.0,
+              SizedBox(
+                height: screenSize.height / 30,
               ),
               TextCard(
                 title: 'Tags et comptes à identifier',
                 tag: tag,
                 content: tagParagraph,
               ),
-              const SizedBox(
-                height: 20.0,
+              SizedBox(
+                height: screenSize.height / 30,
               ),
-              RemunerationCard()
+              const RemunerationCard()
             ],
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: CampagneFooter(),
-        )
       ],
     );
   }

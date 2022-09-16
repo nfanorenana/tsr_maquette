@@ -13,9 +13,10 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back_ios_rounded,
           color: Colors.white,
+          size: screenSize.width / 12,
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -40,8 +41,9 @@ class Home extends StatelessWidget {
                 height: screenSize.height / 5,
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+                padding: EdgeInsets.symmetric(
+                    vertical: screenSize.width / 16,
+                    horizontal: screenSize.height / 35),
                 decoration: const BoxDecoration(
                   color: Colors.white12,
                   borderRadius: BorderRadius.all(
@@ -59,9 +61,10 @@ class Home extends StatelessWidget {
                     elevation: 0.0,
                     primary: Colors.transparent,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: Colors.white,
+                    size: screenSize.width / 12,
                   ),
                 ),
               ),

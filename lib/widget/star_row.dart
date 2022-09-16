@@ -11,27 +11,25 @@ class StarRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
 
-    return Container(
-      // width: screenSize.width * 0.8,
-      child: Row(
-        children: [
+    return Text.rich(
+      TextSpan(
+        children: <InlineSpan>[
           for (var i = 0; i < star; i++)
-            const Icon(
-              Icons.star_border_outlined,
-              color: Color.fromRGBO(112, 112, 112, 1),
-            ),
-          const SizedBox(width: 5.0),
-          Flexible(
-            child: Text(
-              description,
-              style: const TextStyle(
-                color: Color.fromRGBO(112, 112, 112, 1),
-                fontSize: 16.0,
-                fontWeight: FontWeight.w500,
+            WidgetSpan(
+              child: Icon(
+                Icons.star_border_outlined,
+                color: const Color.fromRGBO(112, 112, 112, 1),
+                size: screenSize.width / 15,
               ),
             ),
-          )
+          TextSpan(text: description),
         ],
+      ),
+      textAlign: TextAlign.start,
+      style: const TextStyle(
+        color: Color.fromRGBO(112, 112, 112, 1),
+        fontSize: 16.0,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

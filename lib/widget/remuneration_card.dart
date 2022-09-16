@@ -6,6 +6,8 @@ class RemunerationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -32,8 +34,8 @@ class RemunerationCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
+        children: [
+          const Text(
             "Rémunération",
             style: TextStyle(
               color: Color.fromRGBO(146, 150, 227, 1),
@@ -41,8 +43,10 @@ class RemunerationCard extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: 10.0),
-          Text(
+          SizedBox(
+            height: screenSize.height / 30,
+          ),
+          const Text(
             "Pour chaque publication, nous attribuons une note sur 3 étoiles permettant une démultiplication des gains:",
             style: TextStyle(
               color: Color.fromRGBO(112, 112, 112, 1),
@@ -50,24 +54,34 @@ class RemunerationCard extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 10.0),
-          StarRow(
+          SizedBox(
+            height: screenSize.height / 30,
+          ),
+          const StarRow(
             description:
                 "profil dans la cible / pas de personnalisation du post",
             star: 1,
           ),
-          StarRow(
+          SizedBox(
+            height: screenSize.height / 60,
+          ),
+          const StarRow(
             description:
                 "profil dans la cible / personnalisation du visuel ou du text",
             star: 2,
           ),
-          StarRow(
+          SizedBox(
+            height: screenSize.height / 60,
+          ),
+          const StarRow(
             description:
                 "profil dans la cible / personnalisation complète du post",
             star: 3,
           ),
-          SizedBox(height: 10.0),
-          Text(
+          SizedBox(
+            height: screenSize.height / 30,
+          ),
+          const Text(
             "Plafond par post: 30 euros",
             style: TextStyle(
               color: Color.fromRGBO(112, 112, 112, 1),
