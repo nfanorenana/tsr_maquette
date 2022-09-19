@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tsr_maquette/app_theme.dart';
 
 class TextCard extends StatelessWidget {
   final String title;

@@ -12,21 +12,19 @@ class CritereDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          icon,
-          const SizedBox(
-            width: 5.0,
+    return Row(
+      children: [
+        icon,
+        const SizedBox(
+          width: 5.0,
+        ),
+        Flexible(
+          child: Text(
+            detail,
+            style: const TextStyle(color: Colors.black, fontSize: 18.0),
           ),
-          Flexible(
-            child: Text(
-              detail,
-              style: const TextStyle(color: Colors.black, fontSize: 18.0),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

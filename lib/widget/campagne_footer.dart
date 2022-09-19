@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsr_maquette/widget/avatar.dart';
 
 class CampagneFooter extends StatelessWidget {
   const CampagneFooter({Key? key}) : super(key: key);
@@ -33,7 +34,10 @@ class CampagneFooter extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text("exemple d'avatar"),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Avatar(),
+            ),
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tsr_maquette/widget/campagne_footer.dart';
 import 'package:tsr_maquette/widget/remuneration_card.dart';
 import 'package:tsr_maquette/widget/sn_logo.dart';
 import 'package:tsr_maquette/widget/text_card.dart';
-import 'package:tsr_maquette/widget/title_card.dart';
-
-import '../widget/price.dart';
 
 class Briefing extends StatelessWidget {
   const Briefing({Key? key}) : super(key: key);

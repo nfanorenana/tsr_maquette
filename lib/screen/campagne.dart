@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:tsr_maquette/app_theme.dart';
 import 'package:tsr_maquette/screen/briefing.dart';
 import 'package:tsr_maquette/screen/critere.dart';
 import 'package:tsr_maquette/screen/post.dart';
@@ -19,18 +18,19 @@ class Campagne extends StatefulWidget {
 class _CampagneState extends State<Campagne> with TickerProviderStateMixin {
   late TabController _tabController;
   late int _selectedTab;
+  late bool _favorite;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
     _selectedTab = 0;
+    _favorite = false;
   }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    print(ModalRoute.of(context)?.settings.name);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -74,10 +74,19 @@ class _CampagneState extends State<Campagne> with TickerProviderStateMixin {
                                       ),
                                       color: Colors.white,
                                     ),
-                                    Icon(
-                                      Icons.favorite_border_rounded,
-                                      color: Colors.white,
-                                      size: screenSize.width / 12,
+                                    IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          _favorite = !_favorite;
+                                        });
+                                      },
+                                      icon: Icon(
+                                        _favorite
+                                            ? Icons.favorite_rounded
+                                            : Icons.favorite_border_rounded,
+                                        color: Colors.white,
+                                        size: screenSize.width / 12,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -99,12 +108,15 @@ class _CampagneState extends State<Campagne> with TickerProviderStateMixin {
                               Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                    const SizedBox(),
+                                    Wrap(
+                                      // mainAxisAlignment:
+                                      //     MainWrapAlignment.spaceAround,
+                                      spacing: 10.0,
                                       children: [
                                         Icon(
                                           Icons.circle_rounded,
