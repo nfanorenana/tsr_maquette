@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tsr_maquette/app_theme.dart';
 
 class StackedImage extends StatelessWidget {
   final List<Widget> items;
@@ -50,7 +49,6 @@ class StackedImage extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 1),
       child: Wrap(
-        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
           Stack(

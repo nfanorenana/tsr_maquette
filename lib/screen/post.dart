@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Post extends StatelessWidget {
   const Post({Key? key}) : super(key: key);
@@ -44,12 +46,30 @@ Une idée pour divertir nos petits loups. Durant les vacances de février, j'ai 
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      'Copier le texte',
-                      style: TextStyle(
-                        color: Color.fromRGBO(146, 150, 227, 1),
-                        fontSize: 18.0,
+                    TextButton(
+                      child: const Text(
+                        'Copier le texte',
+                        style: TextStyle(
+                          color: Color.fromRGBO(146, 150, 227, 1),
+                          fontSize: 18.0,
+                        ),
                       ),
+                      onPressed: () {
+                        Clipboard.setData(
+                          ClipboardData(
+                            text: postExample,
+                          ),
+                        );
+                        Fluttertoast.showToast(
+                          msg: "Texte copié dans le presse-papier",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.BOTTOM,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.black54,
+                          textColor: Colors.white,
+                          fontSize: 18.0,
+                        );
+                      },
                     ),
                     SizedBox(
                       width: screenSize.width / 50,

@@ -7,6 +7,7 @@ import 'package:tsr_maquette/screen/post.dart';
 import 'package:tsr_maquette/widget/campagne_footer.dart';
 import 'package:tsr_maquette/widget/price.dart';
 import 'package:tsr_maquette/widget/title_card.dart';
+import 'package:badges/badges.dart';
 
 class Campagne extends StatefulWidget {
   const Campagne({Key? key}) : super(key: key);
@@ -114,8 +115,6 @@ class _CampagneState extends State<Campagne> with TickerProviderStateMixin {
                                   children: [
                                     const SizedBox(),
                                     Wrap(
-                                      // mainAxisAlignment:
-                                      //     MainWrapAlignment.spaceAround,
                                       spacing: 10.0,
                                       children: [
                                         Icon(
@@ -140,10 +139,20 @@ class _CampagneState extends State<Campagne> with TickerProviderStateMixin {
                                         ),
                                       ],
                                     ),
-                                    Icon(
-                                      Icons.file_download_outlined,
-                                      color: Colors.white,
-                                      size: screenSize.width / 12,
+                                    Badge(
+                                      badgeContent: const Text(
+                                        '4',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                        ),
+                                      ),
+                                      badgeColor: Colors.white12,
+                                      child: Icon(
+                                        Icons.file_download_outlined,
+                                        color: Colors.white,
+                                        size: screenSize.width / 12,
+                                      ),
                                     )
                                   ],
                                 ),
@@ -219,7 +228,11 @@ class _CampagneState extends State<Campagne> with TickerProviderStateMixin {
               ],
             ),
           ),
-          const CampagneFooter()
+          SizedBox(
+            child: (_selectedTab == 0 || _selectedTab == 1)
+                ? const CampagneFooter()
+                : null,
+          ),
         ],
       ),
     );
