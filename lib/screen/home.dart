@@ -31,40 +31,46 @@ class Home extends StatelessWidget {
         ),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-          child: Column(
-            // direction: Axis.vertical,
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
+          child: Stack(
             children: [
-              const DetailCard(),
-              SizedBox(
-                height: screenSize.height / 5,
+              Container(
+                alignment: Alignment.center,
+                child: const DetailCard(),
               ),
               Container(
-                padding: EdgeInsets.symmetric(
-                    vertical: screenSize.width / 16,
-                    horizontal: screenSize.height / 35),
-                decoration: const BoxDecoration(
-                  color: Colors.white12,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30.0),
-                  ),
+                margin: EdgeInsets.symmetric(
+                  vertical: screenSize.height / 15,
+                  horizontal: screenSize.width / 10,
                 ),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Campagne()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0.0,
-                    primary: Colors.transparent,
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: screenSize.width / 20,
+                    horizontal: screenSize.height / 50,
                   ),
-                  child: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: Colors.white,
-                    size: screenSize.width / 12,
+                  decoration: const BoxDecoration(
+                    color: Colors.white12,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30.0),
+                    ),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Campagne()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0.0,
+                      primary: Colors.transparent,
+                    ),
+                    child: Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Colors.white,
+                      size: screenSize.width / 12,
+                    ),
                   ),
                 ),
               ),
